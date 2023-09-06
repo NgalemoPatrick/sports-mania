@@ -74,3 +74,27 @@ body {
   color: rgb(237, 237, 159);
   background-color: #566771;
 }
+
+.score-bar-container {
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+  min-height: 100vh;
+  border: 2px solid black;
+}
+
+.score-bar {
+  background-color: skyblue;
+  height: 10vh;
+}
+
+.search {
+  background-color: blanchedalmond;
+  height: 7vh;
+}
+
+.body {
+  background-color: yellowgreen;
+  height: 82.5vh;
+}
