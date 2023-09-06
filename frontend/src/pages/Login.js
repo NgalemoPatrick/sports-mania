@@ -1,5 +1,5 @@
 import React from "react";
-import  TextInput from "../components/TextInput";
+import { TextInput, Loading, CustomButton } from "../components";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -43,10 +43,18 @@ const Login = () => {
           <Link to="reset-pwd" className="reset-pwd">
             Forgot password?
           </Link>
-          {
-             isSubmitting ? <loading /> : <CustomButtom />
-          }
+          {isSubmitting ? (
+            <Loading />
+          ) : (
+            <CustomButton type="submit" title="Login" />
+          )}
         </form>
+        <p className='don-have-acc'>
+          Don't have an account?
+          <Link to='/register' className='register-link'>
+            Create Account
+          </Link>
+        </p>
       </section>
       <section className="login-left-side"></section>
     </section>
