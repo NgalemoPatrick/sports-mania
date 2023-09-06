@@ -38,6 +38,11 @@ body {
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 5em;
-  padding: 8em;
+  padding: 5em;
+}
+
+.text-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
 }
