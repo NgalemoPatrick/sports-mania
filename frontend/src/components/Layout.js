@@ -1,18 +1,16 @@
-import { Outlet, Navigate, Routes, Route, useLocation} from 'react-router-dom'
-
-import React from 'react'
+import { Outlet, Navigate, Routes, Route, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import React from "react";
 
 const Layout = () => {
-  
-    const user = null;
-  const location = useLocation()
+  const user = useSelector((state) => state.user);
+  const location = useLocation();
 
   return user?.token ? (
     <Outlet />
-  ): (
-    <Navigate to='/login' state={{from : location}} replace />
-  )
-  
-}
+  ) : (
+    <Navigate to="/login" state={{ from: location }} replace />
+  );
+};
 
-export default Layout
+export default Layout;

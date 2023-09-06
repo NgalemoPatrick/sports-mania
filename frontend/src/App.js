@@ -2,6 +2,9 @@
 import { Outlet, Navigate, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import { Home, Profile, Register, Login, ResePwd } from './pages'
+
+
+
 function App() {
   return (
     <div className="App">
