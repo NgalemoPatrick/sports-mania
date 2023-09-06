@@ -13,6 +13,9 @@ const Login = () => {
   } = useForm({
     mode: "onChange",
   });
+
+  const onSubmit = async (data) => {};
+
   const [isSubmitting, setIsSubmittint] = useState(false);
   const dispatch = useDispatch();
   return (
@@ -20,7 +23,7 @@ const Login = () => {
       <section className="login-right-side">
         <h4 className="login-txt">Log in to your account</h4>
         <h5 className="login-txt">Welcome Back</h5>
-        <form className="login-form">
+        <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
           <TextInput
             name="email"
             placeholder="email@exampla.com"
@@ -49,9 +52,9 @@ const Login = () => {
             <CustomButton type="submit" title="Login" />
           )}
         </form>
-        <p className='don-have-acc'>
+        <p className="don-have-acc">
           Don't have an account?
-          <Link to='/register' className='register-link'>
+          <Link to="/register" className="register-link">
             Create Account
           </Link>
         </p>

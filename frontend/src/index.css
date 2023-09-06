@@ -21,6 +21,13 @@ body {
   min-height: 100vh;
 }
 
+.login-right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
 .login-left-side {
   background-color: #566771;
   background-image: url(./images/logo.png);
@@ -39,6 +46,13 @@ body {
   display: flex;
   flex-direction: column;
   padding: 5em;
+  background-color: #566771;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  align-content: center;
 }
 
 .text-input {
