@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { dispatch } from "./store";
+import { user } from "../assets/data";
 
 const initialState = {
-  user: JSON.parse(window?.localStorage.getItem("user")) ?? {},
+  user: JSON.parse(window?.localStorage.getItem("user")) ?? user,
   edit: false,
 };
 
@@ -11,36 +12,34 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     login(state, action) {
-        state.user = action.payload;
-        localStorage.setItem("user", JSON.stringify(action.payload));
+      state.user = action.payload;
+      localStorage.setItem("user", JSON.stringify(action.payload));
     },
     logout(state) {
-        state.user = null;
-        localStorage?.removeItem("user")
+      state.user = null;
+      localStorage?.removeItem("user");
     },
     updateProfile(state, action) {
-        state.edit = action.payload;
-
-    }
-
+      state.edit = action.payload;
+    },
   },
 });
 
 export function UserLogin(user) {
-    return (dispatch, getState) => {
-        dispatch(userSlice.actions.login(user))
-    }
+  return (dispatch, getState) => {
+    dispatch(userSlice.actions.login(user));
+  };
 }
 
 export function UserLogout() {
-    return (dispatch, getState) => {
-        dispatch(userSlice.actions.logout())
-    }
+  return (dispatch, getState) => {
+    dispatch(userSlice.actions.logout());
+  };
 }
 export function UpdateProfile(val) {
-    return (dispatch, getState) => {
-        dispatch(userSlice.actions.updateProfile(val))
-    }
+  return (dispatch, getState) => {
+    dispatch(userSlice.actions.updateProfile(val));
+  };
 }
 
-export default userSlice.reducer
+export default userSlice.reducer;
