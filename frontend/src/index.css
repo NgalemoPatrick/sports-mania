@@ -46,3 +46,8 @@ body {
   flex-direction: column;
   margin-top: 2rem;
 }
+
+.reset-pwd {
+  color: #666;
+  margin-top: 1rem;
+}

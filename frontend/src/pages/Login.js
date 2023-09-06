@@ -2,6 +2,8 @@ import React from "react";
 import { TextInput } from "../components";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import {useDispatch } from "react-redux"
+import {useState} from "React"
 
 const Login = () => {
   const {
@@ -11,6 +13,8 @@ const Login = () => {
   } = useForm({
     mode: "onChange",
   });
+  const [isSubmitting, setIsSubmittint] = useState(false);
+  const dispatch = useDispatch();
   return (
     <section className="login-container">
       <section className="login-right-side">
@@ -36,7 +40,9 @@ const Login = () => {
             })}
             error={errors.password ? errors.password?.message : ""}
           />
-          <Link to='reset-pwd'>Forgot password?</Link>
+          <Link to="reset-pwd" className="reset-pwd">
+            Forgot password?
+          </Link>
         </form>
       </section>
       <section className="login-left-side"></section>
