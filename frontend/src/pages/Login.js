@@ -1,9 +1,9 @@
 import React from "react";
-import { TextInput } from "../components";
+import  TextInput from "../components/TextInput";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import {useDispatch } from "react-redux"
-import {useState} from "React"
+import { useDispatch } from "react-redux";
+import { useState } from "react";
 
 const Login = () => {
   const {
@@ -43,6 +43,9 @@ const Login = () => {
           <Link to="reset-pwd" className="reset-pwd">
             Forgot password?
           </Link>
+          {
+             isSubmitting ? <loading /> : <CustomButtom />
+          }
         </form>
       </section>
       <section className="login-left-side"></section>
