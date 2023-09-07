@@ -6,9 +6,12 @@ const bodyParser = require("body-parser");
 
 //for security
 const helmet = require("helmet");
+const connectDb = require("./dbConfig/dbConn");
 
 dotenv.config();
 const PORT = process.env.PORT || 9090;
+
+connectDb()
 const app = express();
 
 // Middlewae config
