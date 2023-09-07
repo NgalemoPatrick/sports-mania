@@ -9,7 +9,7 @@ export const hashString = async (useValue) => {
 
 }
 
-export const compareString = async (userPassword, password) {
+export const compareString = async (userPassword, password) => {
     const isMatch = await bcrypt.compare(userPassword, password);
     return isMatch;
 }
