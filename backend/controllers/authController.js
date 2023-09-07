@@ -15,6 +15,17 @@ export const register = async (req, res, next) => {
       next("Email already exists");
     }
     const hashedPassword = await hashedString(password);
+
+    // create the user
+    const user = await Users.create({
+        firstName,
+        lastName,
+        email,
+        password: hashedPassword
+    });
+
+    //Sent verification email
+    sendVerificationEmail(user, res)
   } catch (error) {
     console.log(error);
     res.status(404).json({});
